@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer List</title>
+    <style>
+        #mytable {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #mytable td, #mytable th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        /* Alternate row colors */
+        #mytable tr:nth-child(even) {
+            background-color: #C5B4E3;
+        }
+
+        /* Row hover effect */
+        #mytable tr:hover {
+            background-color: pink;
+        }
+
+        /* Table header style */
+        #mytable th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #AA336A;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Customer List</h1>
+
+<table id="mytable">
+    <tr>   
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Pin</th>
+        <th>Id Number</th>
+        <th>Nationality</th>
+        <th>Occupation</th>
+        <th>Profile</th>
+    </tr>
+
+    {% for customer in customers %}
+    <tr>
+        <td>{{ customer.first_name }}</td>
+        <td>{{ customer.last_name }}</td>
+        <td>{{ customer.adress }}</td>
+        <td>{{ customer.email }}</td>
+        <td>{{ customer.phone_number }}</td>
+        <td>{{ customer.age }}</td>
+        <td>{{ customer.gender }}</td>
+        <td>{{ customer.pin }}</td>
+        <td>{{ customer.id_number }}</td>
+        <td>{{ customer.nationality }}</td>
+        <td>{{ customer.occupation }}</td>
+        <td>
+            <a href="{% url 'customer_profile' id=customer.id %}">View Profile</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

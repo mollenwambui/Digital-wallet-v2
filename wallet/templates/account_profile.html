@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Account Profile</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f9f9f9;
+            margin: 20px;
+            color: #333;
+        }
+
+        .profile-container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #AA336A;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #555;
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #AA336A;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h1>{{ account.account_type }}</h1>
+
+        <h2><span class="label">Balance:</span> {{ account.balance }}</h2>
+        <h2><span class="label">Account Name:</span> {{ account.account_name }}</h2>
+        <h2><span class="label">Wallet:</span> {{ account.wallet }}</h2>
+    </div>
+</body>
+</html>

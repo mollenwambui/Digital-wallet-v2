@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Profile</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        .profile-container {
+            background-color: #fff;
+            padding: 30px;
+            max-width: 600px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .profile-container h1 {
+            color: #AA336A;
+            margin-bottom: 10px;
+        }
+
+        .profile-container h2 {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .profile-container h5 {
+            color: #333;
+            margin: 5px 0;
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="profile-container">
+    <h1>{{ customer.first_name }} {{ customer.last_name }}</h1>
+    <h2>Gender: {{ customer.gender }}</h2>
+
+    {% comment %}
+    <img class="profile-picture" src="{{ customer.profile_picture.url }}" alt="Profile Picture"/>
+    {% endcomment %}
+
+    <h5>Address: {{ customer.address }}</h5>
+    <h5>Email: {{ customer.email }}</h5>
+    <h5>Phone Number: {{ customer.phone_number }}</h5>
+    <h5>Age: {{ customer.age }}</h5>
+    <h5>Pin: {{ customer.pin }}</h5>
+    <h5>Nationality: {{ customer.nationality }}</h5>
+    <h5>Occupation: {{ customer.occupation }}</h5>
+</div>
+
+</body>
+</html>
