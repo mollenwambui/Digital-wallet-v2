@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Digital Wallet | Dashboard</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #4f8cff, #6dd5ed);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: 32px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        p.subtitle {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #f7f9ff;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        }
+
+        .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Digital Wallet Dashboard</h1>
+        <p class="subtitle">Manage accounts, customers, and transactions with ease.</p>
+
+        <div class="cards">
+
+            <a href="{% url 'list_account' %}">
+                <div class="card">
+                    <div class="icon">💳</div>
+                    <h3>View Accounts</h3>
+                    <p>See all wallet accounts in the system.</p>
+                </div>
+            </a>
+
+            <a href="{% url 'register_customer' %}">
+                <div class="card">
+                    <div class="icon">🧑‍💼</div>
+                    <h3>Register Customer</h3>
+                    <p>Add a new customer to the digital wallet.</p>
+                </div>
+            </a>
+
+            <a href="{% url 'customer_list' %}">
+                <div class="card">
+                    <div class="icon">📋</div>
+                    <h3>Customer List</h3>
+                    <p>View and manage all customers.</p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</body>
+</html>

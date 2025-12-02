@@ -51,9 +51,12 @@ def my_account(request):
     else:
         form = AccountForm()  # define form for GET requests
     return render(request, "account.html", {"form": form})
+
+
 def list_account(request):
     accounts=Account.objects.all()
     return render(request,"account_list.html",{"accounts":accounts})
+
 def account_profile (request,id):
     account=Account.objects.get(id=id)  
     return render(request,"account_profile.html",{"account":account})  
@@ -72,7 +75,14 @@ def wallet(request):
 
 def list_wallet(request):
     wallets=Wallet.objects.all()
-    return render(request,"wallet_list.html",{"wallets":wallets})        
+    return render(request,"wallet_list.html",{"wallets":wallets}) 
+       
+def wallet_profile(request,id)  :
+    wallet=Wallet.objects.get(id=id) 
+    return render(request,"wallet_profile.html",{"wallet":wallet})         
+
+def home(request):
+    return render(request, "home.html")
 
 
 def my_currency(request):
@@ -204,9 +214,6 @@ def edit_profile(request,id) :
             form=CustomerRegistrationForm(instance=customer)
             return render(request,"edit_profile.html",{"form":form})
 
-def wallet_profile(request,id)  :
-    wallet=Wallet.objects.get(id=id) 
-    return render(request,"wallet_profile.html",{"wallet":wallet})         
 
 def edit_wallet(request,id)  :
     wallet=Wallet.objects.get(id=id)   
